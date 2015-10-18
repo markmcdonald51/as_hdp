@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  site_section_id: 
+  aasm_state: MyString
+  layout_id: 
+
+two:
+  name: MyString
+  site_section_id: 
+  aasm_state: MyString
+  layout_id: 

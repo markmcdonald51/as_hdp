@@ -1,0 +1,7 @@
+h1 Crop Image
+
+= form_for admin_artist_path(@artist) do |f1|
+  = fields_for :front_page_image, @artist.front_page_image do |f|
+    = f.cropbox :asset
+    = f.crop_preview :asset, width: 150
+    = f.submit 'Save'

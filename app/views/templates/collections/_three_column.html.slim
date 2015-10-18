@@ -1,0 +1,35 @@
+
+- three_column.in_groups_of(3) do |three|
+  .row
+  /! Projects Row
+  -three.each do |row|
+    .col-md-4.portfolio-item
+      - if row.try(:front_page_image).try(:asset).try(:url)
+        = link_to row do
+          = image_tag row.front_page_image.asset.url(:medium) rescue nil
+      - elsif row.present?
+        a href="#"
+          img.img-responsive alt="" src="http://placehold.it/700x300  " /
+
+      h3 = link_to row.try(:name), row
+      p = row.try(:summary)
+
+hr/
+/! Pagination
+.row.text-center
+  .col-lg-12
+    ul.pagination
+      li
+        a href="#"  &laquo;
+      li.active
+        a href="#"  1
+      li
+        a href="#"  2
+      li
+        a href="#"  3
+      li
+        a href="#"  4
+      li
+        a href="#"  5
+      li
+        a href="#"  &raquo;

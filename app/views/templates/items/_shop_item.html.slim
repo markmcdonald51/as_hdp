@@ -1,0 +1,68 @@
+.container
+  .row
+    .col-md-3
+      p.lead = link_to shop_item.artistable.name, section_path(shop_item.artistable)
+      .list-group
+        a.list-group-item.active href="#"  Category 1
+        a.list-group-item href="#"  Category 2
+        a.list-group-item href="#"  Category 3
+    .col-md-9
+      .thumbnail
+        - if shop_item.try(:front_page_image).try(:present?)
+          = image_tag(shop_item.front_page_image.asset.url(:medium), class: 'img-responsive')
+          / = image_tag shop_item.front_page_image, img.img-responsive
+        - else
+          img.img-responsive alt="" src="http://placehold.it/800x300"
+        .caption-full
+          h4.pull-right $24.99
+          h4 = shop_item.name
+
+        p = shop_item.summary
+
+        .ratings
+          p.pull-right 3 reviews
+          p
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            | 4.0 stars
+      .well
+        .text-right
+          a.btn.btn-success Leave a Review
+        hr/
+        .row
+          .col-md-12
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            | Anonymous
+            span.pull-right 10 days ago
+            p This product was great in terms of quality. I would definitely buy another!
+        hr/
+        .row
+          .col-md-12
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            | Anonymous
+            span.pull-right 12 days ago
+            p I've alredy ordered another one!
+        hr/
+        .row
+          .col-md-12
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            | Anonymous
+            span.pull-right 15 days ago
+            p I've seen some better than this, but not at this price. I definitely recommend this item.
+  /! /.container
+  .container

@@ -1,0 +1,4 @@
+= render partial: 'templates/collections/one_column', object: @sections
+'
+
+/ = render partial: @section.try(:layout).try(:rails_layout_name) if @section.@try(:layout).try(:rails_layout_name)

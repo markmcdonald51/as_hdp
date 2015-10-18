@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subtitle: MyString
+  summary: MyText
+  body: MyText
+  documentable_id: 
+  aasm_state: MyString
+
+two:
+  title: MyString
+  subtitle: MyString
+  summary: MyText
+  body: MyText
+  documentable_id: 
+  aasm_state: MyString

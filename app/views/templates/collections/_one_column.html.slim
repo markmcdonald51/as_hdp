@@ -1,0 +1,57 @@
+.container
+  /! Page Heading
+  .row
+    .col-lg-12
+      h1.page-header
+        | SECTIONS
+        small ...something for everyone!
+  /! /.row
+  /! Project One
+  - one_column.each do |row|
+    .row
+      .col-md-7
+        - if row.image.try(:asset).try(:url)
+          = link_to section_path(row) do
+            = image_tag row.image.asset.url(:medium)
+        - else
+          a href="#"
+            img.img-responsive alt="" src="http://placehold.it/700x300" /
+      .col-md-5
+        h3 = row.name
+        h4 = row.subheading
+        p = row.try(:description).try(:html_safe)
+        / = link_to 'View Section', section_path(row), html_options: {class: 'a.btn.btn-primary'}
+
+        a.btn.btn-primary href="#{section_path(row)}"
+          | View Section
+          span.glyphicon.glyphicon-chevron-right
+    /! /.row
+    hr/
+
+  /! Pagination
+  .row.text-center
+    .col-lg-12
+      ul.pagination
+        li
+          a href="#"  &laquo;
+        li.active
+          a href="#"  1
+        li
+          a href="#"  2
+        li
+          a href="#"  3
+        li
+          a href="#"  4
+        li
+          a href="#"  5
+        li
+          a href="#"  &raquo;
+  /! /.row
+  hr/
+  /! Footer
+  footer
+    .row
+      .col-lg-12
+        p Copyright &copy; HDP #{Time.now.year}
+    /! /.row
+/! /.container

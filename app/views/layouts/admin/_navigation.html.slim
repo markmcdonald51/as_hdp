@@ -1,0 +1,17 @@
+.header
+  ul.nav.nav-pills.pull-right
+
+    - if current_user.try(:is_admin?)
+      li [class="#{is_active?(admin_users_path)}"]= link_to "Users", admin_users_path
+      li [class="#{is_active?(admin_clients_path)}"]= link_to "Clients", admin_clients_path
+      li [class="#{is_active?(admin_site_sections_path)}"]= link_to "Site Sections", admin_site_sections_path
+      li [class="#{is_active?(admin_unit_of_measurements_path)}"]= link_to "Units of Measurement", admin_unit_of_measurements_path
+      / li [class="#{is_active?(admin_artists_path)}"]= link_to "Artists", admin_artists_path
+      / li [class="#{is_active?(admin_layouts_path)}"]= link_to "Layouts", admin_layouts_path
+
+    / li [class="#{is_active?(admin_items_path)}"]= link_to "Items", admin_items_path
+    / li[class="#{is_active?(admin_people_path)}"] = link_to "People", admin_people_path
+    / li[class="#{is_active?(admin_categories_path)}"] = link_to "Categories", admin_categories_path
+
+  h3.text-muted
+    = link_to "Home", root_path

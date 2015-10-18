@@ -1,0 +1,9 @@
+/! Page Header
+.row
+  .col-lg-12
+    h1.page-header
+      | #{@section.name}
+      small = @section.subheading
+/! /.row
+
+= render partial: 'templates/collections/three_column', object: @section.children.order(:position)

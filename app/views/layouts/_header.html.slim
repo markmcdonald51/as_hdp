@@ -1,0 +1,32 @@
+.navbar.navbar-inverse.navbar-static-top[role="navigation"]
+  .navbar-header.pull-left
+    a.navbar-brand[href="/"]
+      = "The New World"
+
+  .navbar-header.pull-right
+
+    - if current_user
+      = current_user.name
+      = link_to t('go_to_profile'), profile_path, :class => "btn btn-primary"
+
+      a.btn.btn-danger.navbar-btn[href="/signout" style="margin-right:10px;"]
+        = t('signout')
+
+    - else
+      .btn-group
+        button.btn.btn-success.navbar-btn.dropdown-toggle[type="button" data-toggle="dropdown" style="margin-right:10px;"]
+          = t('signin')
+          span.caret
+        ul.dropdown-menu[role="menu" style="left:-135px;"]
+          li
+            a[href="/auth/facebook"]
+              = image_tag('facebook_512.png', :style => "height:25px;max-width:100%;", :alt => 'sign in with facebook')
+              |  Sign In with facebook
+          li
+            a[href="/auth/google_oauth2"]
+              = image_tag('google_512.png', :style => "height:25px;", :alt => 'sign in with google+')
+              |  Sign In with google+
+          li
+            a[href="/auth/twitter"]
+              = image_tag('twitter_512.png', :style => "height:25px;", :alt => 'sign in with twitter')
+              |  Sign In with twitter
